@@ -10,7 +10,7 @@ import { Entry } from './entry.model';
   providedIn: 'root'
 })
 export class EntryService {
-  private apiPath = 'api/entrys';
+  private apiPath = 'api/entries';
 
   constructor(private http: HttpClient) {}
 
@@ -52,9 +52,14 @@ export class EntryService {
 
   // private methods
   private jsonDataToEntries(jsonData: any[]): Entry[] {
-    const categories: Entry[] = [];
-    jsonData.forEach(element => categories.push(element as Entry));
-    return categories;
+    const entries: Entry[] = [];
+
+    jsonData.forEach(element => {
+      const entry = Object.assign(new Entry(), element);
+      entries.push(entry);
+    });
+
+    return entries;
   }
 
   private jsonDataToEntry(jsonData: any): Entry {
