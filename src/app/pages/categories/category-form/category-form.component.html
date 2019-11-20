@@ -13,7 +13,7 @@
     </h1>
   </div>
   <div class="col-md">
-    <a routerLink="new" class="btn btn-light float-right">
+    <a routerLink="/categories" class="btn btn-light float-right">
       << Voltar
     </a>
   </div>
@@ -61,6 +61,15 @@
         </div>
       </div>
     </div>
+  </div>
+
+  <div class="alert alert-danger mt-4" *ngIf="serverErrorMessages">
+    <strong>Erro no servidor</strong>
+    <ul>
+      <li *ngFor="let error of serverErrorMessages" :key="error">
+        {{ error }}
+      </li>
+    </ul>
   </div>
 
   <button
