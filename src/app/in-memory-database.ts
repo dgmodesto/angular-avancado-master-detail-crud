@@ -44,7 +44,7 @@ export class InMemoryDataBase implements InMemoryDbService {
         paid: false,
         date: '15/11/2019',
         amount: '10.500,00',
-        type: 'renevue',
+        type: 'revenue',
         description: 'CLT Full'
       } as Entry,
       {
