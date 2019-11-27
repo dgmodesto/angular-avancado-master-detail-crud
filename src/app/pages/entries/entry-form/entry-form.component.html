@@ -1,17 +1,14 @@
-<app-bread-crumb [items]="[{ text: 'Lançamentos', link: '/entries' }, { text: pageTitle }]"></app-bread-crumb>
+<app-bread-crumb
+  [items]="[{ text: 'Lançamentos', link: '/entries' }, { text: pageTitle }]"
+></app-bread-crumb>
 
-<div class="row mb-4">
-  <div class="col-md-9">
-    <h1 class="h2 border-left pl-2">
-      {{ pageTitle }}
-    </h1>
-  </div>
-  <div class="col-md-3">
-    <a routerLink="/entries" class="btn btn-light float-right">
-      << Voltar
-    </a>
-  </div>
-</div>
+<app-page-header
+  [page-title]="pageTitle"
+  button-text="<< Voltar"
+  button-link="/entries"
+  button-class="btn-light"
+>
+</app-page-header>
 
 <form [formGroup]="resourceForm" (submit)="submitForm()">
   <div class="card">
@@ -38,7 +35,8 @@
           <div
             class="text-danger"
             *ngIf="
-              resourceForm.get('type').invalid && resourceForm.get('type').touched
+              resourceForm.get('type').invalid &&
+              resourceForm.get('type').touched
             "
           >
             <div *ngIf="resourceForm.get('type').errors.required">
@@ -58,7 +56,8 @@
           <div
             class="text-danger"
             *ngIf="
-              resourceForm.get('name').invalid && resourceForm.get('name').touched
+              resourceForm.get('name').invalid &&
+              resourceForm.get('name').touched
             "
           >
             <div *ngIf="resourceForm.get('name').errors.required">
@@ -91,7 +90,8 @@
           <div
             class="text-danger"
             *ngIf="
-              resourceForm.get('amount').invalid && resourceForm.get('amount').touched
+              resourceForm.get('amount').invalid &&
+              resourceForm.get('amount').touched
             "
           >
             <div *ngIf="resourceForm.get('amount').errors.required">
@@ -117,7 +117,8 @@
           <div
             class="text-danger"
             *ngIf="
-              resourceForm.get('amount').invalid && resourceForm.get('amount').touched
+              resourceForm.get('amount').invalid &&
+              resourceForm.get('amount').touched
             "
           >
             <div *ngIf="resourceForm.get('amount').errors.required">
@@ -149,7 +150,8 @@
           <div
             class="text-danger"
             *ngIf="
-              resourceForm.get('paid').invalid && resourceForm.get('paid').touched
+              resourceForm.get('paid').invalid &&
+              resourceForm.get('paid').touched
             "
           >
             <div *ngIf="resourceForm.get('paid').errors.required">
