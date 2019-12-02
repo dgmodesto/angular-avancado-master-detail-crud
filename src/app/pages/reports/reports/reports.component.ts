@@ -109,9 +109,11 @@ export class ReportsComponent implements OnInit {
   private getChartData(entryType: string, title: string, color: string) {
     const chartData = [];
     this.categories.forEach(category => {
+      debugger;
       // filtering entries by categoy and type
       const filteredEntries = this.entries.filter(
-        entry => entry.categoryId === category.id && entry.type === entryType
+        // tslint:disable-next-line: triple-equals
+        entry => entry.categoryId == category.id && entry.type === entryType
       );
 
       // if found entries, then sum entries amount and add to chartData

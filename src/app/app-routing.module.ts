@@ -13,7 +13,9 @@ const routes: Routes = [
   {
     path: 'reports',
     loadChildren: './pages/reports/reports.module#ReportsModule'
-  }
+  },
+
+  { path: '', redirectTo: '/reports', pathMatch: 'full' }
 ];
 
 @NgModule({
